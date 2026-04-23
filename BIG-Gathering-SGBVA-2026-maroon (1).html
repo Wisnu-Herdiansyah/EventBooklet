@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BIG Gathering Alumni SGBVA Jawa Barat 2026</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:system-ui,-apple-system,sans-serif;background:#f5f5f3;color:#1a1a1a;padding:1.5rem 1rem}
+ 
+  .lp{max-width:720px;margin:0 auto;padding:0 0 3rem}
+ 
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#4a0010 0%,#800020 50%,#5c0018 100%);border-radius:16px;padding:3rem 2rem 2.5rem;text-align:center;position:relative;overflow:hidden;margin-bottom:2rem}
+  .hero::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,0.04)}
+  .hero::after{content:'';position:absolute;bottom:-40px;left:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,0.03)}
+  .badge-event{display:inline-block;background:rgba(255,255,255,0.15);color:#ffd6e0;font-size:12px;font-weight:500;padding:5px 14px;border-radius:20px;border:0.5px solid rgba(255,255,255,0.25);margin-bottom:1rem;letter-spacing:0.5px}
+  .hero h1{font-size:28px;font-weight:500;color:#fff;line-height:1.3;margin-bottom:.5rem}
+  .hero h1 span{color:#ffb3c6}
+  .hero-sub{color:#f5c6d0;font-size:15px;margin-bottom:1.5rem}
+  .hero-meta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+  .meta-pill{background:rgba(255,255,255,0.1);border:0.5px solid rgba(255,255,255,0.2);border-radius:20px;padding:7px 16px;color:#ffe0e8;font-size:13px;display:flex;align-items:center;gap:6px}
+  .meta-pill svg{width:14px;height:14px;opacity:.8}
+ 
+  /* SECTION */
+  .section{margin-bottom:2rem}
+  .sec-label{font-size:11px;font-weight:500;color:#6b7280;letter-spacing:1px;text-transform:uppercase;margin-bottom:.75rem}
+  .sec-title{font-size:20px;font-weight:500;color:#1a1a1a;margin-bottom:1.25rem}
+ 
+  /* INFO CARDS */
+  .info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:2rem}
+  .info-card{background:#f0efe8;border-radius:8px;padding:1rem 1.25rem;border:0.5px solid rgba(0,0,0,0.08)}
+  .info-card .ic-label{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .info-card .ic-val{font-size:15px;font-weight:500;color:#1a1a1a}
+ 
+  /* RUNDOWN */
+  .rundown-table{width:100%;border-collapse:collapse;font-size:14px}
+  .rundown-table thead tr{background:#f0efe8}
+  .rundown-table th{text-align:left;padding:10px 12px;font-weight:500;font-size:12px;color:#6b7280;border-bottom:0.5px solid rgba(0,0,0,0.08)}
+  .rundown-table td{padding:10px 12px;border-bottom:0.5px solid rgba(0,0,0,0.08);color:#1a1a1a;vertical-align:top}
+  .rundown-table tr:last-child td{border-bottom:none}
+  .time-badge{background:#EEEDFE;color:#3C3489;font-size:11px;font-weight:500;padding:3px 8px;border-radius:4px;white-space:nowrap;display:inline-block}
+  .rundown-table tr:hover td{background:#f0efe8}
+ 
+  /* GUEST TABS */
+  .tab-nav{display:flex;gap:8px;margin-bottom:1.25rem;flex-wrap:wrap}
+  .tab-btn{padding:7px 16px;border-radius:20px;border:0.5px solid rgba(0,0,0,0.2);background:transparent;font-size:13px;font-weight:500;color:#6b7280;cursor:pointer;transition:all .15s}
+  .tab-btn.active{background:#800020;color:#ffd6e0;border-color:#800020}
+  .tab-content{display:none}
+  .tab-content.active{display:block}
+ 
+  /* DO DONT */
+  .dd-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .dd-card{border-radius:8px;padding:1rem;border:0.5px solid}
+  .dd-card.do{background:#EAF3DE;border-color:#C0DD97}
+  .dd-card.dont{background:#FCEBEB;border-color:#F7C1C1}
+  .dd-head{font-size:13px;font-weight:500;margin-bottom:.75rem;display:flex;align-items:center;gap:6px}
+  .dd-card.do .dd-head{color:#27500A}
+  .dd-card.dont .dd-head{color:#791F1F}
+  .dd-icon{width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;flex-shrink:0}
+  .do .dd-icon{background:#3B6D11;color:#fff}
+  .dont .dd-icon{background:#A32D2D;color:#fff}
+  .dd-list{list-style:none;display:flex;flex-direction:column;gap:6px}
+  .dd-list li{font-size:13px;color:#1a1a1a;padding-left:14px;position:relative;line-height:1.5}
+  .dd-list li::before{content:'•';position:absolute;left:0}
+  .do .dd-list li::before{color:#3B6D11}
+  .dont .dd-list li::before{color:#A32D2D}
+ 
+  /* CATEGORY BADGE */
+  .cat-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:500;margin-bottom:1rem}
+  .cat-reguler{background:#E6F1FB;color:#0C447C;border:0.5px solid #B5D4F4}
+  .cat-umkm{background:#EAF3DE;color:#27500A;border:0.5px solid #C0DD97}
+  .cat-vip{background:#FAEEDA;color:#633806;border:0.5px solid #FAC775}
+  .cat-vvip{background:#EEEDFE;color:#3C3489;border:0.5px solid #CECBF6}
+ 
+  /* HOW TO GET THERE */
+  .addr-card{background:#fff;border:0.5px solid rgba(0,0,0,0.1);border-radius:16px;padding:1rem 1.25rem;display:flex;align-items:flex-start;gap:12px;margin-bottom:1.25rem}
+  .pin-dot{width:36px;height:36px;border-radius:50%;background:#fce8ed;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .addr-name{font-size:15px;font-weight:500;color:#1a1a1a;margin-bottom:2px}
+  .addr-str{font-size:13px;color:#6b7280;line-height:1.5;margin-bottom:.5rem}
+  .map-btn{display:inline-flex;align-items:center;gap:5px;background:#fce8ed;color:#800020;font-size:12px;font-weight:500;padding:5px 12px;border-radius:20px;text-decoration:none;border:0.5px solid #f5b8c8}
+ 
+  .transport-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(0,1fr));gap:12px;margin-bottom:1.5rem}
+  .t-card{background:#fff;border:0.5px solid rgba(0,0,0,0.1);border-radius:16px;padding:1rem;cursor:pointer;transition:border-color .15s}
+  .t-card.active{border:2px solid #800020}
+  .t-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:.6rem}
+  .t-icon svg{width:18px;height:18px}
+  .t-name{font-size:13px;font-weight:500;color:#1a1a1a;margin-bottom:2px}
+  .t-est{font-size:11px;color:#6b7280}
+ 
+  .route-panel{background:#f0efe8;border-radius:16px;padding:1.25rem;margin-bottom:1.25rem}
+  .route-panel-title{font-size:14px;font-weight:500;color:#1a1a1a;margin-bottom:1rem}
+  .route-step{display:flex;gap:10px;margin-bottom:10px;align-items:flex-start}
+  .route-step:last-child{margin-bottom:0}
+  .step-num{width:22px;height:22px;border-radius:50%;background:#800020;color:#fff;font-size:11px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+  .step-text{font-size:13px;color:#1a1a1a;line-height:1.5}
+  .step-note{font-size:12px;color:#6b7280;margin-top:2px}
+ 
+  .tip-row{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:0.5px solid rgba(0,0,0,0.08)}
+  .tip-row:last-child{border-bottom:none}
+  .tip-icon{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .tip-text{font-size:13px;color:#1a1a1a;line-height:1.5}
+  .tip-sub{font-size:12px;color:#6b7280}
+ 
+  .route-content{display:none}
+  .route-content.active{display:block}
+ 
+  /* CTA */
+  .cta-box{background:linear-gradient(135deg,#4a0010,#800020);border-radius:16px;padding:2rem;text-align:center;margin-top:2rem}
+  .cta-box h3{color:#fff;font-size:18px;font-weight:500;margin-bottom:.5rem}
+  .cta-box p{color:#f5c6d0;font-size:14px;margin-bottom:1.25rem}
+  .cta-btn{display:inline-block;background:#a0002a;color:#fff;padding:11px 28px;border-radius:20px;font-size:14px;font-weight:500;text-decoration:none;border:none;cursor:pointer}
+ 
+  @media(max-width:480px){
+    .dd-grid{grid-template-columns:1fr}
+    .hero h1{font-size:22px}
+    .hero{padding:2rem 1.25rem 1.75rem}
+  }
+</style>
+</head>
+<body>
+<div class="lp">
+ 
+  <!-- HERO -->
+  <div class="hero">
+    <div class="badge-event">SGB VA Alumni · West Java</div>
+    <h1>BIG Gathering <span>Alumni SGBVA</span><br>Jawa Barat 2026</h1>
+    <p class="hero-sub">Networking, Insight & Kolaborasi bersama UMKM</p>
+    <div class="hero-meta">
+      <div class="meta-pill">
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3" width="12" height="11" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M5 2v2M11 2v2M2 7h12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        Selasa, 14 April 2026
+      </div>
+      <div class="meta-pill">
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.3"/><path d="M8 5v3.5l2 1.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        15.00 – 20.00 WIB
+      </div>
+      <div class="meta-pill">
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 2C5.79 2 4 3.79 4 6c0 3 4 8 4 8s4-5 4-8c0-2.21-1.79-4-4-4z" stroke="currentColor" stroke-width="1.3"/><circle cx="8" cy="6" r="1.5" stroke="currentColor" stroke-width="1.3"/></svg>
+        IBIS Ballroom, Trans Studio Bandung
+      </div>
+    </div>
+  </div>
+ 
+  <!-- INFO GRID -->
+  <div class="info-grid">
+    <div class="info-card"><div class="ic-label">Registrasi dibuka</div><div class="ic-val">14.00 WIB</div></div>
+    <div class="info-card"><div class="ic-label">Acara dimulai</div><div class="ic-val">15.00 WIB</div></div>
+    <div class="info-card"><div class="ic-label">Durasi</div><div class="ic-val">±5 jam</div></div>
+    <div class="info-card" style="border-left:3px solid #800020"><div class="ic-label">Dress code</div><div class="ic-val" style="color:#800020">Smart Casual</div><div style="font-size:11px;color:#a0404a;margin-top:3px">Tema warna Maroon</div></div>
+  </div>
+ 
+  <!-- HOW TO GET THERE -->
+  <div class="section">
+    <div class="sec-label">Lokasi Acara</div>
+    <div class="sec-title">How to get there</div>
+ 
+    <div class="addr-card">
+      <div class="pin-dot">
+        <svg viewBox="0 0 16 16" fill="none" stroke="#800020" stroke-width="1.4" width="16" height="16"><path d="M8 2C5.79 2 4 3.79 4 6c0 3 4 8 4 8s4-5 4-8c0-2.21-1.79-4-4-4z"/><circle cx="8" cy="6" r="1.5"/></svg>
+      </div>
+      <div>
+        <div class="addr-name">IBIS Ballroom, Trans Studio Bandung</div>
+        <div class="addr-str">Jl. Gatot Subroto No.289, Cibangkong,<br>Kec. Batununggal, Kota Bandung, Jawa Barat 40273</div>
+        <a class="map-btn" href="https://maps.google.com/?q=-6.927261,107.636406" target="_blank">
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.3" width="12" height="12"><path d="M6 1C4.07 1 2.5 2.57 2.5 4.5c0 2.625 3.5 6.5 3.5 6.5s3.5-3.875 3.5-6.5C9.5 2.57 7.93 1 6 1z"/><circle cx="6" cy="4.5" r="1.2"/></svg>
+          Buka di Google Maps
+        </a>
+      </div>
+    </div>
+ 
+    <div style="margin-bottom:.75rem;font-size:13px;color:#6b7280">Pilih moda transportasi:</div>
+    <div class="transport-grid">
+      <div class="t-card active" id="btn-mobil" onclick="showRoute('mobil')">
+        <div class="t-icon" style="background:#E6F1FB">
+          <svg viewBox="0 0 18 18" fill="none" stroke="#185FA5" stroke-width="1.4"><rect x="2" y="6" width="14" height="8" rx="2"/><path d="M4 6l1.5-3h7L14 6"/><circle cx="5" cy="14" r="1.5" fill="#185FA5" stroke="none"/><circle cx="13" cy="14" r="1.5" fill="#185FA5" stroke="none"/></svg>
+        </div>
+        <div class="t-name">Mobil / Motor</div>
+        <div class="t-est">Via Tol / Jalan Biasa</div>
+      </div>
+      <div class="t-card" id="btn-online" onclick="showRoute('online')">
+        <div class="t-icon" style="background:#EAF3DE">
+          <svg viewBox="0 0 18 18" fill="none" stroke="#3B6D11" stroke-width="1.4"><rect x="2" y="6" width="14" height="8" rx="2"/><path d="M4 6l1.5-3h7L14 6"/><circle cx="5" cy="14" r="1.5" fill="#3B6D11" stroke="none"/><circle cx="13" cy="14" r="1.5" fill="#3B6D11" stroke="none"/></svg>
+        </div>
+        <div class="t-name">Ojek / Taksi Online</div>
+        <div class="t-est">Gojek · Grab · inDrive</div>
+      </div>
+      <div class="t-card" id="btn-angkot" onclick="showRoute('angkot')">
+        <div class="t-icon" style="background:#FAEEDA">
+          <svg viewBox="0 0 18 18" fill="none" stroke="#854F0B" stroke-width="1.4"><rect x="1" y="5" width="16" height="9" rx="2"/><path d="M1 9h16M5 14v2M13 14v2"/><circle cx="5" cy="14" r="1.2" fill="#854F0B" stroke="none"/><circle cx="13" cy="14" r="1.2" fill="#854F0B" stroke="none"/></svg>
+        </div>
+        <div class="t-name">Angkutan Umum</div>
+        <div class="t-est">Damri · Angkot</div>
+      </div>
+      <div class="t-card" id="btn-kereta" onclick="showRoute('kereta')">
+        <div class="t-icon" style="background:#fce8ed">
+          <svg viewBox="0 0 18 18" fill="none" stroke="#800020" stroke-width="1.4"><rect x="3" y="2" width="12" height="11" rx="2"/><path d="M3 8h12M7 13l-1.5 3M11 13l1.5 3"/><circle cx="6" cy="11" r="1" fill="#800020" stroke="none"/><circle cx="12" cy="11" r="1" fill="#800020" stroke="none"/></svg>
+        </div>
+        <div class="t-name">Kereta / KA</div>
+        <div class="t-est">Dari luar kota</div>
+      </div>
+    </div>
+ 
+    <div class="route-content active" id="route-mobil">
+      <div class="route-panel">
+        <div class="route-panel-title">Rute via Tol dari arah Jakarta / Cipularang</div>
+        <div class="route-step"><div class="step-num">1</div><div><div class="step-text">Masuk Tol Cipularang, keluar di Gerbang Tol Pasteur</div></div></div>
+        <div class="route-step"><div class="step-num">2</div><div><div class="step-text">Lurus ke Jl. Dr. Djunjunan (Pasteur) menuju Flyover Pasupati</div></div></div>
+        <div class="route-step"><div class="step-num">3</div><div><div class="step-text">Ambil arah Jl. Gatot Subroto</div></div></div>
+        <div class="route-step"><div class="step-num">4</div><div><div class="step-text">Trans Studio Bandung & IBIS Hotel ada di sebelah kanan jalan</div><div class="step-note">Nomor 289, setelah pertigaan Cibangkong</div></div></div>
+      </div>
+      <div class="route-panel">
+        <div class="route-panel-title">Parkir kendaraan</div>
+        <div class="route-step"><div class="step-num">P</div><div><div class="step-text">Parkir tersedia di area Trans Studio Mall & Hotel</div><div class="step-note">Masuk melalui pintu parkir utama Jl. Gatot Subroto · Kapasitas besar, tersedia parkir motor & mobil</div></div></div>
+      </div>
+    </div>
+ 
+    <div class="route-content" id="route-online">
+      <div class="route-panel">
+        <div class="route-panel-title">Pesan ojek / taksi online</div>
+        <div class="route-step"><div class="step-num">1</div><div><div class="step-text">Buka Gojek, Grab, atau inDrive</div></div></div>
+        <div class="route-step"><div class="step-num">2</div><div><div class="step-text">Masukkan tujuan: <strong>"ibis Bandung Trans Studio"</strong> atau <strong>"Trans Studio Mall Bandung"</strong></div></div></div>
+        <div class="route-step"><div class="step-num">3</div><div><div class="step-text">Drop off di pintu utama hotel / ballroom IBIS</div><div class="step-note">Beritahu driver tujuan ke "IBIS Hotel, bukan Trans Studio Mall" agar tidak salah pintu masuk</div></div></div>
+      </div>
+      <div style="background:#E6F1FB;border:0.5px solid #B5D4F4;border-radius:8px;padding:.85rem 1rem;font-size:13px;color:#0C447C">
+        Koordinat untuk share ke driver: <strong>-6.9273, 107.6364</strong>
+      </div>
+    </div>
+ 
+    <div class="route-content" id="route-angkot">
+      <div class="route-panel">
+        <div class="route-panel-title">Dari Terminal Leuwipanjang / Stasiun Hall</div>
+        <div class="route-step"><div class="step-num">1</div><div><div class="step-text">Naik Damri rute Leuwipanjang–Ledeng atau Cicaheum–Leuwipanjang</div></div></div>
+        <div class="route-step"><div class="step-num">2</div><div><div class="step-text">Turun di halte dekat Jl. Gatot Subroto / Trans Studio</div></div></div>
+        <div class="route-step"><div class="step-num">3</div><div><div class="step-text">Jalan kaki ±3–5 menit menuju pintu masuk IBIS Bandung Trans Studio</div></div></div>
+      </div>
+      <div style="background:#FAEEDA;border:0.5px solid #FAC775;border-radius:8px;padding:.85rem 1rem;font-size:13px;color:#633806">
+        Disarankan turun di halte Gatot Subroto, lalu gunakan ojek online untuk jarak terakhir agar lebih mudah.
+      </div>
+    </div>
+ 
+    <div class="route-content" id="route-kereta">
+      <div class="route-panel">
+        <div class="route-panel-title">Dari Stasiun Bandung (Stasiun Hall)</div>
+        <div class="route-step"><div class="step-num">1</div><div><div class="step-text">Tiba di Stasiun Bandung (Jl. Stasiun Timur)</div></div></div>
+        <div class="route-step"><div class="step-num">2</div><div><div class="step-text">Pesan ojek/taksi online di area stasiun menuju Trans Studio Bandung</div><div class="step-note">Estimasi ±15–20 menit tergantung kondisi lalu lintas</div></div></div>
+      </div>
+      <div class="route-panel">
+        <div class="route-panel-title">Dari Stasiun Kiaracondong</div>
+        <div class="route-step"><div class="step-num">1</div><div><div class="step-text">Tiba di Stasiun Kiaracondong (lebih dekat ke lokasi)</div></div></div>
+        <div class="route-step"><div class="step-num">2</div><div><div class="step-text">Pesan ojek/taksi online menuju IBIS Bandung Trans Studio</div><div class="step-note">Estimasi ±10 menit · Lebih direkomendasikan untuk kereta dari arah Timur/Jakarta</div></div></div>
+      </div>
+    </div>
+ 
+    <div style="margin-top:1.5rem;border-top:0.5px solid rgba(0,0,0,0.08);padding-top:1.25rem">
+      <div style="font-size:13px;font-weight:500;color:#1a1a1a;margin-bottom:.75rem">Tips sebelum berangkat</div>
+      <div class="tip-row">
+        <div class="tip-icon" style="background:#fce8ed"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#800020" stroke-width="1.3"><circle cx="7" cy="7" r="5.5"/><path d="M7 4.5v3l1.5 1.5" stroke-linecap="round"/></svg></div>
+        <div><div class="tip-text">Berangkat lebih awal — rencanakan tiba sebelum pukul 13.30</div><div class="tip-sub">Jl. Gatot Subroto dapat padat di jam sore hari kerja</div></div>
+      </div>
+      <div class="tip-row">
+        <div class="tip-icon" style="background:#EAF3DE"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#3B6D11" stroke-width="1.3"><path d="M2 7h10M7 2l5 5-5 5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><div class="tip-text">Masuk melalui Trans Studio Mall (Lokasi di Bawah Masjid Bank Mega)</div><div class="tip-sub">Sampaikan ke petugas bahwa tujuan ke IBIS Ballroom untuk acara gathering</div></div>
+      </div>
+      <div class="tip-row">
+        <div class="tip-icon" style="background:#FAEEDA"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#854F0B" stroke-width="1.3"><rect x="2" y="3" width="10" height="8" rx="1.5"/><path d="M5 3V2M9 3V2M2 6h10" stroke-linecap="round"/></svg></div>
+        <div><div class="tip-text">Registrasi dibuka mulai pukul 14.00 WIB</div><div class="tip-sub">Peserta yang datang lebih awal dipersilakan mengunjungi booth yang tersedia</div></div>
+      </div>
+      <div class="tip-row">
+        <div class="tip-icon" style="background:#FCEBEB"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#A32D2D" stroke-width="1.3"><circle cx="7" cy="5" r="2.5"/><path d="M2.5 12c0-2.485 2.015-4.5 4.5-4.5s4.5 2.015 4.5 4.5" stroke-linecap="round"/><path d="M10 3l2 2M12 3l-2 2" stroke-linecap="round"/></svg></div>
+        <div><div class="tip-text">Seluruh peserta dilarang membawa pendamping tanpa koordinasi sebelumnya</div><div class="tip-sub">Hubungi panitia terlebih dahulu jika memerlukan pendamping</div></div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- RUNDOWN -->
+  <div class="section">
+    <div class="sec-label">Jadwal Acara</div>
+    <div class="sec-title">Rundown lengkap</div>
+    <table class="rundown-table">
+      <thead><tr><th style="width:130px">Waktu</th><th>Sesi</th><th>Deskripsi</th></tr></thead>
+      <tbody>
+        <tr><td><span class="time-badge">14.00–15.00</span></td><td style="font-weight:500">Registrasi & Welcome Networking</td><td style="color:#6b7280">Ambil name tag & connection card, mulai berkenalan</td></tr>
+        <tr><td><span class="time-badge">15.00–15.05</span></td><td style="font-weight:500">Opening Session</td><td style="color:#6b7280">MC membuka acara & menyampaikan gambaran kegiatan</td></tr>
+        <tr><td><span class="time-badge">15.05–15.15</span></td><td style="font-weight:500">Ice Breaking Challenge</td><td style="color:#6b7280">Aktivitas interaktif untuk mencairkan suasana</td></tr>
+        <tr><td><span class="time-badge">15.15–15.30</span></td><td style="font-weight:500">Insight Session #1</td><td style="color:#6b7280">Peluang kolaborasi Virtual Assistant & UMKM</td></tr>
+        <tr><td><span class="time-badge">15.30–15.45</span></td><td style="font-weight:500">Insight Session #2</td><td style="color:#6b7280">Strategi pengembangan kerja sama & peluang bisnis</td></tr>
+        <tr><td><span class="time-badge">15.45–15.55</span></td><td style="font-weight:500">Diskusi & Sharing</td><td style="color:#6b7280">Tanya jawab & berbagi pengalaman</td></tr>
+        <tr><td><span class="time-badge">15.55–16.40</span></td><td style="font-weight:500">Mini Challenge & Fun Activity</td><td style="color:#6b7280">Game interaktif berhadiah untuk meningkatkan engagement</td></tr>
+        <tr><td><span class="time-badge">16.40–16.55</span></td><td style="font-weight:500">Group Photo Session</td><td style="color:#6b7280">Dokumentasi bersama peserta, narasumber & panitia</td></tr>
+        <tr><td><span class="time-badge">16.55–17.30</span></td><td style="font-weight:500">Sponsor Session & Ice Breaking</td><td style="color:#6b7280">Sharing session & ice breaking interaktif dari sponsor</td></tr>
+        <tr><td><span class="time-badge">17.30–18.30</span></td><td style="font-weight:500">Speed & 1-on-1 Networking</td><td style="color:#6b7280">Speed networking reguler · VIP/VVIP: diskusi langsung narasumber</td></tr>
+        <tr><td><span class="time-badge">18.30–19.30</span></td><td style="font-weight:500">Dinner, Sholat & Networking</td><td style="color:#6b7280">Makan malam bersama & networking santai</td></tr>
+        <tr><td><span class="time-badge">19.30–19.45</span></td><td style="font-weight:500">Doorprize & Closing</td><td style="color:#6b7280">Pengumuman pemenang, pembagian doorprize & penutupan</td></tr>
+        <tr><td><span class="time-badge">19.45–selesai</span></td><td style="font-weight:500">Free Networking</td><td style="color:#6b7280">Lanjutkan networking & jajaki potensi kolaborasi baru</td></tr>
+      </tbody>
+    </table>
+  </div>
+ 
+  <!-- DO & DONTS -->
+  <div class="section">
+    <div class="sec-label">Panduan Peserta</div>
+    <div class="sec-title">Do's & Don'ts per kategori</div>
+    <div class="tab-nav">
+      <button class="tab-btn active" onclick="switchTab('reguler')">Peserta Reguler</button>
+      <button class="tab-btn" onclick="switchTab('online-peserta')">Peserta Online</button>
+      <button class="tab-btn" onclick="switchTab('umkm')">UMKM</button>
+      <button class="tab-btn" onclick="switchTab('vip')">VIP</button>
+      <button class="tab-btn" onclick="switchTab('vvip')">VVIP</button>
+    </div>
+ 
+    <!-- REGULER -->
+    <div class="tab-content active" id="tab-reguler">
+      <div class="cat-badge cat-reguler">Peserta Reguler</div>
+      <div class="dd-grid">
+        <div class="dd-card do">
+          <div class="dd-head"><div class="dd-icon">✓</div> Yang harus dilakukan</div>
+          <ul class="dd-list">
+            <li>Datang tepat waktu pukul 14.00 untuk registrasi</li>
+            <li>Bawa kartu identitas (KTP/kartu pelajar) untuk verifikasi</li>
+            <li>Ambil name tag di meja registrasi</li>
+            <li>Aktif berpartisipasi dalam ice breaking & sesi diskusi</li>
+            <li>Manfaatkan sesi speed networking sebaik-baiknya</li>
+            <li>Kunjungi booth UMKM & sponsor yang tersedia</li>
+            <li>Berpakaian smart casual dengan nuansa warna maroon</li>
+          </ul>
+        </div>
+        <div class="dd-card dont">
+          <div class="dd-head"><div class="dd-icon">✕</div> Yang tidak boleh dilakukan</div>
+          <ul class="dd-list">
+            <li>Tidak hadir di area VIP/VVIP tanpa izin panitia</li>
+            <li>Jangan datang terlambat lebih dari 30 menit setelah acara mulai</li>
+            <li>Tidak membawa makanan/minuman dari luar venue</li>
+            <li>Hindari mendominasi waktu diskusi atau tanya jawab</li>
+            <li>Jangan tinggalkan sampah sembarangan di venue</li>
+            <li>Tidak merokok di area dalam ruangan</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- PESERTA ONLINE -->
+    <div class="tab-content" id="tab-online-peserta">
+      <div class="cat-badge" style="background:#F3E8FF;color:#6B21A8;border:0.5px solid #D8B4FE">Peserta Online</div>
+      <div class="dd-grid">
+        <div class="dd-card do">
+          <div class="dd-head"><div class="dd-icon">✓</div> Yang harus dilakukan</div>
+          <ul class="dd-list">
+            <li>Pastikan link atau kode akses virtual hadir sudah diterima dari panitia</li>
+            <li>Uji koneksi internet & perangkat minimal 30 menit sebelum acara dimulai</li>
+            <li>Gunakan nama lengkap saat bergabung ke platform virtual</li>
+            <li>Aktifkan kamera selama sesi berlangsung sebagai bentuk kehadiran</li>
+            <li>Manfaatkan fitur chat/Q&A untuk mengajukan pertanyaan ke narasumber</li>
+            <li>Ikuti sesi virtual networking yang disediakan panitia</li>
+            <li>Berpakaian rapi (smart casual) meski bergabung dari rumah</li>
+          </ul>
+        </div>
+        <div class="dd-card dont">
+          <div class="dd-head"><div class="dd-icon">✕</div> Yang tidak boleh dilakukan</div>
+          <ul class="dd-list">
+            <li>Jangan berbagi link/akses virtual kepada pihak yang tidak terdaftar</li>
+            <li>Tidak merekam atau menyiarkan ulang sesi tanpa izin panitia</li>
+            <li>Hindari multitasking berlebihan yang mengganggu fokus selama sesi</li>
+            <li>Jangan bergabung dari tempat dengan latar belakang atau suara yang mengganggu</li>
+            <li>Tidak meninggalkan sesi tanpa pemberitahuan ke panitia</li>
+            <li>Hindari menggunakan nama samaran atau anonim saat bergabung</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- UMKM -->
+    <div class="tab-content" id="tab-umkm">
+      <div class="cat-badge cat-umkm">UMKM</div>
+      <div class="dd-grid">
+        <div class="dd-card do">
+          <div class="dd-head"><div class="dd-icon">✓</div> Yang harus dilakukan</div>
+          <ul class="dd-list">
+            <li>Siapkan katalog produk/layanan dalam format digital maupun cetak</li>
+            <li>Datang lebih awal untuk setting booth sebelum 14.00</li>
+            <li>Bawa kartu nama yang cukup untuk seluruh peserta</li>
+            <li>Aktif memperkenalkan produk/usaha kepada peserta lain</li>
+            <li>Manfaatkan sesi insight untuk mempelajari peluang kolaborasi dengan VA</li>
+            <li>Ikut serta dalam speed networking untuk koneksi langsung</li>
+            <li>Tampilkan profil bisnis yang jelas & menarik di booth</li>
+          </ul>
+        </div>
+        <div class="dd-card dont">
+          <div class="dd-head"><div class="dd-icon">✕</div> Yang tidak boleh dilakukan</div>
+          <ul class="dd-list">
+            <li>Tidak melakukan hard-selling yang memaksa kepada peserta</li>
+            <li>Jangan meninggalkan booth tanpa perwakilan selama jam utama</li>
+            <li>Tidak memasang materi promosi di luar area booth yang ditentukan</li>
+            <li>Hindari klaim produk yang berlebihan atau menyesatkan</li>
+            <li>Tidak menggunakan speaker/audio tanpa izin panitia</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- VIP -->
+    <div class="tab-content" id="tab-vip">
+      <div class="cat-badge cat-vip">VIP</div>
+      <div class="dd-grid">
+        <div class="dd-card do">
+          <div class="dd-head"><div class="dd-icon">✓</div> Yang harus dilakukan</div>
+          <ul class="dd-list">
+            <li>Konfirmasi kehadiran ke panitia minimal H-1 acara</li>
+            <li>Manfaatkan hak akses 1-on-1 networking dengan narasumber</li>
+            <li>Siapkan agenda atau topik diskusi sebelum sesi 1-on-1</li>
+            <li>Gunakan area VIP yang telah disediakan panitia</li>
+            <li>Ambil connection card di meja registrasi VIP & gunakan untuk memperluas jaringan</li>
+            <li>Berpartisipasi aktif dalam seluruh rangkaian acara</li>
+            <li>Bawa business profile atau portofolio untuk dibagikan</li>
+          </ul>
+        </div>
+        <div class="dd-card dont">
+          <div class="dd-head"><div class="dd-icon">✕</div> Yang tidak boleh dilakukan</div>
+          <ul class="dd-list">
+            <li>Tidak membawa tamu tambahan tanpa konfirmasi ke panitia</li>
+            <li>Jangan mendominasi waktu eksklusif narasumber secara berlebihan</li>
+            <li>Tidak membagikan akses atau badge VIP kepada peserta lain</li>
+            <li>Hindari merekam sesi eksklusif tanpa izin narasumber</li>
+            <li>Tidak meninggalkan acara sebelum sesi utama selesai tanpa pemberitahuan</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- VVIP -->
+    <div class="tab-content" id="tab-vvip">
+      <div class="cat-badge cat-vvip">VVIP</div>
+      <div class="dd-grid">
+        <div class="dd-card do">
+          <div class="dd-head"><div class="dd-icon">✓</div> Yang harus dilakukan</div>
+          <ul class="dd-list">
+            <li>Koordinasi langsung dengan PIC panitia sebelum acara</li>
+            <li>Gunakan jalur registrasi khusus VVIP yang telah disiapkan</li>
+            <li>Ambil connection card eksklusif VVIP & manfaatkan untuk jaringan strategis</li>
+            <li>Manfaatkan fasilitas eksklusif termasuk tempat duduk & meja terpisah</li>
+            <li>Bersedia hadir dalam sesi foto resmi acara</li>
+            <li>Gunakan hak akses prioritas diskusi & networking secara optimal</li>
+            <li>Memberikan insight atau sambutan jika diminta panitia</li>
+          </ul>
+        </div>
+        <div class="dd-card dont">
+          <div class="dd-head"><div class="dd-icon">✕</div> Yang tidak boleh dilakukan</div>
+          <ul class="dd-list">
+            <li>Tidak hadir tanpa memberi kabar ke panitia setidaknya 2 jam sebelumnya</li>
+            <li>Jangan mengizinkan pihak lain menggunakan fasilitas VVIP Anda</li>
+            <li>Tidak mempublikasikan konten eksklusif sesi tanpa persetujuan panitia</li>
+            <li>Hindari agenda paralel yang mengganggu jadwal sesi utama</li>
+            <li>Tidak membawa pendamping tanpa koordinasi sebelumnya</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- CTA -->
+  <div class="cta-box">
+    <p style="font-size:22px;margin-bottom:.5rem">📅</p>
+    <h3>Kita sudah nggak sabar ketemu kamu!</h3>
+    <p style="margin-bottom:1rem">Siapkan energi terbaikmu dan jangan lupa datang tepat waktu.</p>
+    <div style="background:rgba(255,255,255,0.08);border:0.5px solid rgba(255,255,255,0.15);border-radius:12px;padding:.85rem 1.25rem;margin:0 auto 1rem;display:inline-block;text-align:left">
+      <div style="color:#ffe0e8;font-size:14px;line-height:1.9">
+        <span style="color:#ffb3c6;font-weight:500">📅</span> 14 April 2026 &nbsp;·&nbsp; 15.00 – 20.00 WIB<br>
+        <span style="color:#ffb3c6;font-weight:500">📍</span> IBIS Ballroom Trans Studio Bandung
+      </div>
+    </div>
+    <p style="color:#f5c6d0;font-size:13px;margin-bottom:1.5rem">— See you there!</p>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+      <a class="cta-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=BIG+Gathering+Alumni+SGBVA+Jawa+Barat+2026&dates=20260414T080000Z/20260414T130000Z&details=BIG+Gathering+Alumni+SGBVA+West+Java+with+UMKM+2026.+Speed+Networking,+Insight+Session,+Dinner+%26+More.&location=IBIS+Bandung+Trans+Studio,+Jl.+Gatot+Subroto+No.289,+Bandung" target="_blank" style="display:inline-flex;align-items:center;gap:7px;text-decoration:none">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><rect x="1" y="2.5" width="13" height="11" rx="2" stroke="white" stroke-width="1.3"/><path d="M4.5 1.5v2M10.5 1.5v2M1 6.5h13" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg>
+        Google Calendar
+      </a>
+      <a class="cta-btn" href="#" onclick="downloadIcal(event)" style="display:inline-flex;align-items:center;gap:7px;text-decoration:none;background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.3)">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><rect x="1" y="2.5" width="13" height="11" rx="2" stroke="white" stroke-width="1.3"/><path d="M4.5 1.5v2M10.5 1.5v2M1 6.5h13" stroke="white" stroke-width="1.3" stroke-linecap="round"/><path d="M7.5 9.5v-3M6 8l1.5 1.5L9 8" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        iCal / Apple Calendar
+      </a>
+    </div>
+  </div>
+ 
+</div>
+ 
+<script>
+function switchTab(id){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  event.target.classList.add('active');
+}
+function showRoute(id){
+  ['mobil','online','angkot','kereta'].forEach(k=>{
+    document.getElementById('route-'+k).classList.toggle('active', k===id);
+    document.getElementById('btn-'+k).classList.toggle('active', k===id);
+  });
+}
+function downloadIcal(e){
+  e.preventDefault();
+  const ics=[
+    'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//SGBVA//BIG Gathering 2026//ID',
+    'BEGIN:VEVENT',
+    'DTSTART:20260414T080000Z',
+    'DTEND:20260414T130000Z',
+    'SUMMARY:BIG Gathering Alumni SGBVA Jawa Barat 2026',
+    'DESCRIPTION:BIG Gathering Alumni SGBVA West Java with UMKM 2026. Speed Networking\\, Insight Session\\, Dinner & More.',
+    'LOCATION:IBIS Ballroom Trans Studio Bandung\\, Jl. Gatot Subroto No.289\\, Bandung',
+    'END:VEVENT','END:VCALENDAR'
+  ].join('\r\n');
+  const blob=new Blob([ics],{type:'text/calendar'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='BIG-Gathering-SGBVA-2026.ics';
+  a.click();
+}
+</script>
+</body>
+</html>
